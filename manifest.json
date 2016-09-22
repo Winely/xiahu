@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "Xiahu瞎乎",
+  "description": "改善知乎阅读体验",
+  "version": "1.0",
+
+  "permissions": [
+    "activeTab"
+  ],
+  "page_action": {
+    "default_icon": {
+      "19": "icon_19.png",
+      "38": "icon_38.png"
+    },
+    "default_title": "瞎乎",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["bg.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.zhihu.com/*"],
+      "js": ["jquery.js", "bg.js"]
+//      "run_at":"document_end"
+    }
+  ]
+}
